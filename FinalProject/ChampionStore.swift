@@ -89,27 +89,7 @@ class ChampionStore {
         let request = URLRequest(url: url)
         let task = session.dataTask(with: request) {
             (data, response, error) -> Void in
-//            if let jsonData = data {
-//                do {
-//                    let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: [])
-//                    let jsonDictionary = jsonObject as? [AnyHashable:Any]
-//                    let champions = jsonDictionary?["data"] as? [String:[String:Any]]
-//                    for (_, championJSON) in champions! {
-//                        let image = championJSON["image"] as? [String: Any]
-//                        let full = image?["full"] as? String
-//                        let stats = championJSON["stats"] as? [String: Any]
-//                        let string = "http://ddragon.leagueoflegends.com/cdn/7.14.1/img/champion/" + full!
-//                        print(championJSON)
-//                        
-//                    }
-//                } catch let error {
-//                    print("Error creating JSON object: \(error)")
-//                }
-//            } else if let requestError = error {
-//                print("Error fetching champions: \(requestError)")
-//            } else {
-//                print("Unexpected error with the request")
-//            }
+
             let result = self.processChampionsRequest(data: data, error: error)
             OperationQueue.main.addOperation {
                 completion(result)
