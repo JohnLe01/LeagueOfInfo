@@ -9,6 +9,7 @@ Before anything, make sure to replace
 ```
 in RiotAPI.swift with your own API Key in order to authorize the needed API calls for the app to run
 
+
 You can generate your own API Key at
 ```
 https://developer.riotgames.com/
